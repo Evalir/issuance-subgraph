@@ -1,0 +1,28 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Issuance
+    network: rinkeby
+    source:
+      address: '0xF8582b181Db6C1E8C6cbe16eBa1c3844b67AB463'
+      abi: Issuance
+      startBlock: 6504800
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - IssuancePolicy
+      abis:
+        - name: Issuance
+          file: ./abis/Issuance.json
+      eventHandlers:
+        - event: AddPolicy(indexed uint256,indexed address,uint256)
+          handler: handleAddPolicy
+        - event: RemovePolicy(indexed uint256)
+          handler: handleRemovePolicy
+        - event: ExecuteIssuance(uint256,uint256)
+          handler: handleExecuteIssuance
+      file: ./src/mapping.ts

@@ -1,0 +1,13 @@
+type ExampleEntity @entity {
+  id: ID!
+  count: BigInt!
+  sender: Bytes! # address
+  value: BigInt! # uint256
+}
+
+type IssuancePolicy @entity {
+  id: ID!
+  beneficiary: Bytes! # address
+  blockInflationRate: BigInt! # uint256
+  active: Boolean!
+}
