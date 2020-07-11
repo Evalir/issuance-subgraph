@@ -1,5 +1,4 @@
-import { BigInt } from "@graphprotocol/graph-ts"
-import { AddPolicy, ExecuteIssuance, RemovePolicy } from "../generated/Issuance/Issuance"
+import { AddPolicy, RemovePolicy } from "../generated/Issuance/Issuance"
 import { IssuancePolicy } from "../generated/schema"
 
 export function handleAddPolicy(event: AddPolicy): void {
