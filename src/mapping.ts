@@ -1,6 +1,6 @@
 import { BigInt } from "@graphprotocol/graph-ts"
 import { AddPolicy, ExecuteIssuance, RemovePolicy } from "../generated/Issuance/Issuance"
-import { ExampleEntity, IssuancePolicy } from "../generated/schema"
+import { IssuancePolicy } from "../generated/schema"
 
 export function handleAddPolicy(event: AddPolicy): void {
   let entity = IssuancePolicy.load(event.params.policyId.toString())

@@ -1,13 +1,6 @@
-type ExampleEntity @entity {
-  id: ID!
-  count: BigInt!
-  sender: Bytes! # address
-  value: BigInt! # uint256
-}
-
 type IssuancePolicy @entity {
   id: ID!
-  beneficiary: Bytes! # address
-  blockInflationRate: BigInt! # uint256
-  active: Boolean!
+  beneficiary: Bytes! # address of who will receive the issued tokens
+  blockInflationRate: BigInt! # uint256 yearly inflation rate adjusted for a # of blocks per year (15 sec block time)
+  active: Boolean! #bool If the policy has been deleted
 }
