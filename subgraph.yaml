@@ -23,6 +23,4 @@ dataSources:
           handler: handleAddPolicy
         - event: RemovePolicy(indexed uint256)
           handler: handleRemovePolicy
-        - event: ExecuteIssuance(uint256,uint256)
-          handler: handleExecuteIssuance
       file: ./src/mapping.ts
